@@ -4,6 +4,8 @@ const mysql = require("mysql")
 const cors = require("cors");
 const { response } = require('express');
 
+let port = process.env.PORT || 3001;
+
 const db = mysql.createPool({
     host:"us-cdbr-east-06.cleardb.net",
     user:"bbc2e3d82d142f",
@@ -90,6 +92,6 @@ app.put("/edit", (req,res)=>{
     })
 })
 
-app.listen(3001,() =>{
+app.listen(port,() =>{
     console.log('rodando')
 })
